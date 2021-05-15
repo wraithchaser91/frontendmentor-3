@@ -1,0 +1,25 @@
+@import
+    "variables",
+    "setup",
+    "typography",
+    "components"
+;
+
+/*main: 350px*/
+
+body{
+    @include flex($x-align:center);
+    width:100vw;
+    min-height:100vh;
+    background-color: $cyan;
+    overflow: hidden;
+}
+
+main{
+    width:350px;
+    max-width:85%;
+    @include flex($x-align: center);
+    background-color: white;
+    overflow: hidden;
+    border-radius: 10px;
+}

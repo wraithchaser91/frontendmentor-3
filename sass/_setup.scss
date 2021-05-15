@@ -1,0 +1,60 @@
+*, ::before, ::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+@mixin phone{
+    @media screen and (max-width: $mobileBreakPoint){
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media screen and (min-width:$mobileBreakPoint) and (max-width: $tabletBreakPoint){
+        @content;
+    }
+}
+
+@mixin laptop{
+    @media screen and (min-width:$tabletBreakPoint) and (max-width: $laptopBreakPoint){
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media screen and (min-width:$laptopBreakPoint){
+        @content;
+    }
+}
+
+@mixin flex($direction: column, $y-align: center, $x-align: flex-start){
+    display: flex;
+    flex-direction: $direction;
+    @if($direction == row){
+        justify-content: $x-align;
+        align-items: $y-align;
+    }@else{
+        align-items: $x-align;
+        justify-content: $y-align;
+    }
+}
+
+@mixin hover{
+    &:hover{
+        @content;
+    }
+}
+
+@mixin focus{
+    &:focus{
+        @content;
+    }
+}
+
+@mixin hover-focus{
+    &:hover,
+    &:focus{
+        @content;
+    }
+}
